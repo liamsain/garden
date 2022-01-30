@@ -5,4 +5,5 @@ export interface IVeg {
 	sowingOutdoorsRange?: [number, number];
 	plantingOutSeedlingsRange?: [number, number];
 	harvestingRange: [number, number];
+  img?: string;
 }

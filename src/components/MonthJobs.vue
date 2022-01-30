@@ -1,52 +1,87 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { format, addMonths, getMonth } from 'date-fns';
+import { format } from 'date-fns';
 import { IVeg } from '../types/types';
-
+import harvesterImg from '../assets/harvester.png';
+import sowIndoorsImg from '../assets/seeding.png';
+import sowOutdoorsImg from '../assets/sow.png';
+import plantOutSeedlingsImg from '../assets/plant-out-seedlings.png';
+import { veg } from '../data/veg';
+import MonthJob from './MonthJob.vue';
 const props = defineProps<{
-	veg: IVeg[],
-	monthNumber: number
+  monthNumber: number
 }>();
 const monthNumberIsInRange = (range?: [number, number]): boolean => {
-	if (!range) {
-		return false;
-	}
-	if (range[0] <= range[1]) {
-		return props.monthNumber >= range[0] && props.monthNumber <= range[1];
-	} else {
-		return props.monthNumber <= range[0];
-	}
+  if (!range) {
+    return false;
+  }
+  if (range[0] <= range[1]) {
+    return props.monthNumber >= range[0] && props.monthNumber <= range[1];
+  } else {
+    return props.monthNumber <= range[0];
+  }
 };
-const harvestForMonth = computed(() => 
-	props.veg
-		.filter(veg => monthNumberIsInRange(veg.harvestingRange))
-		.map(x => x.name))
+const harvestForMonth = computed(() =>
+  veg
+    .filter(v => monthNumberIsInRange(v.harvestingRange)))
 
 const sowingIndoorsForMonth = computed(() =>
-	props.veg
-		.filter(veg => monthNumberIsInRange(veg.sowingIndoorsRange))
-		.map(x => x.name))
+  veg
+    .filter(v => monthNumberIsInRange(v.sowingIndoorsRange)))
 
-const sowingOutdoorsForMonth = computed(() => 
-	props.veg
-		.filter(veg => monthNumberIsInRange(veg.sowingOutdoorsRange))
-		.map(x => x.name));
+const sowingOutdoorsForMonth = computed(() =>
+  veg
+    .filter(v => monthNumberIsInRange(v.sowingOutdoorsRange)))
 
-const plantingOutSeedlingsForMonth = computed(() => 
-	props.veg
-		.filter(veg => monthNumberIsInRange(veg.plantingOutSeedlingsRange))
-		.map(x => x.name));
+const plantingOutSeedlingsForMonth = computed(() =>
+  veg
+    .filter(v => monthNumberIsInRange(v.plantingOutSeedlingsRange)))
 </script>
 <template>
-	<div>
-		<h2>{{ format(new Date(2000, monthNumber, 1), 'LLL') }}</h2>
-		<h4 v-if="sowingIndoorsForMonth.length">Sow indoors:</h4>
-		<div v-for="vegName in sowingIndoorsForMonth">{{ vegName }}</div>
-		<h4 v-if="sowingOutdoorsForMonth.length">Sow outdoors:</h4>
-		<div v-for="vegName in sowingOutdoorsForMonth">{{ vegName }}</div>
-		<h4 v-if="plantingOutSeedlingsForMonth.length">Plant seedlings out:</h4>
-		<div v-for="vegName in plantingOutSeedlingsForMonth">{{ vegName }}</div>
-		<h4 v-if="harvestForMonth.length">Harvest:</h4>
-		<div v-for="vegName in harvestForMonth">{{ vegName }}</div>
-	</div>
+  <div>
+    <h1 style="margin-bottom: 24px">{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1>
+    <div class="month-jobs__container">
+      <MonthJob
+        v-if="sowingIndoorsForMonth.length"
+        :img="sowIndoorsImg"
+        :vegetables="sowingIndoorsForMonth"
+        title="Sow Indoors"
+        class="month-jobs__entry"
+      />
+
+      <MonthJob
+        v-if="sowingOutdoorsForMonth.length"
+        :img="sowOutdoorsImg"
+        :vegetables="sowingOutdoorsForMonth"
+        title="Sow Outdoors"
+        class="month-jobs__entry"
+      />
+
+      <MonthJob
+        v-if="plantingOutSeedlingsForMonth.length"
+        :img="plantOutSeedlingsImg"
+        :vegetables="plantingOutSeedlingsForMonth"
+        title="Plant Seedlings Out"
+        class="month-jobs__entry"
+      />
+      <MonthJob
+        v-if="harvestForMonth.length"
+        :img="harvesterImg"
+        :vegetables="harvestForMonth"
+        title="Harvest"
+        class="month-jobs__entry"
+      />
+    </div>
+  </div>
 </template>
+<style>
+.month-jobs__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.month-jobs__entry {
+  margin-left: 44px;
+  margin-right: 44px;
+}
+</style>
