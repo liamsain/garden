@@ -40,7 +40,8 @@ export const veg: IVeg[] = [
     inGarden: false,
     sowingOutdoorsRange: [1, 5],
     harvestingRange: [5, 8],
-    img: carrotImg
+    img: runnerBeans
+    // img: carrotImg
   },
   {
     name: 'Chicory',

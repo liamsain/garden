@@ -39,7 +39,11 @@ const plantingOutSeedlingsForMonth = computed(() =>
 </script>
 <template>
   <div>
-    <h1 style="margin-bottom: 24px">{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1>
+    <h1 >{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1>
+    <div style="display:flex;align-items: center;justify-content:center;">
+      <button @click="$emit('prev')">Prev</button>
+      <button @click="$emit('next')">Next</button>
+    </div>
     <div class="month-jobs__container">
       <MonthJob
         v-if="sowingIndoorsForMonth.length"

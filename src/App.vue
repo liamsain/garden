@@ -8,6 +8,8 @@ import { addMonths, format, getMonth } from 'date-fns';
 import SideBar from './components/SideBar.vue';
 import MonthJobs from './components/MonthJobs.vue';
 
+const currentDate = ref(new Date());
+
 
 
 /*
@@ -23,7 +25,11 @@ recommendations based on weather
 <template>
   <div class="bg" :style="{ backgroundImage: `url(${gardenImg})` }"></div>
   <div class="content">
-    <MonthJobs :monthNumber="getMonth(new Date())" />
+    <MonthJobs
+      :monthNumber="getMonth(currentDate)"
+      @next="currentDate = addMonths(currentDate, 1)"
+      @prev="currentDate = addMonths(currentDate, -1)"
+    />
     <!-- <img :src="carrot" style="height: 40px"/> -->
     <footer>
       <p>
@@ -62,6 +68,8 @@ html {
   font-family: "Cabin", sans-serif;
   color: black;
   height: 100%;
+
+  background-color: rgb(73, 94, 53);
 }
 * {
   box-sizing: border-box;
@@ -149,7 +157,6 @@ h5 {
   position: relative;
   /* background-color: rgba(201, 76, 76, 0.3); */
   /* background-color: rgba(36, 88, 23, 0.3); */
-  background-color: rgb(73, 94, 53);
 }
 .bg img {
   opacity: 0.1;
