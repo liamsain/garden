@@ -10,6 +10,11 @@ import onion from '../assets/veg/007-onion.png';
 import beetroot from '../assets/veg/008-beetroot.png';
 import runnerBeans from '../assets/veg/009-edamame.png';
 import cucumber from '../assets/veg/010-cucumber.png';
+import shallot from '../assets/veg/001-shallot.png';
+import tomato from '../assets/veg/002-tomato.png';
+import potato from '../assets/veg/003-potato.png';
+import garlic from '../assets/veg/004-garlic.png';
+import springOnion from '../assets/veg/005-spring-onion.png';
 export const veg: IVeg[] = [
   {
     name: 'Aubergine',
@@ -77,7 +82,8 @@ export const veg: IVeg[] = [
     name: 'Garlic',
     inGarden: false,
     sowingOutdoorsRange: [1, 2],
-    harvestingRange: [4, 8]
+    harvestingRange: [4, 8],
+    img: garlic
   },
   {
     name: 'Leek',
@@ -108,25 +114,29 @@ export const veg: IVeg[] = [
     name: 'Potatos',
     inGarden: false,
     sowingOutdoorsRange: [2, 4],
-    harvestingRange: [5, 8]
+    harvestingRange: [5, 8],
+    img: potato
   },
   {
     name: 'Shallots',
     inGarden: false,
     sowingOutdoorsRange: [1, 2],
-    harvestingRange: [5, 7]
+    harvestingRange: [5, 7],
+    img: shallot
   },
   {
     name: 'Spring onions',
     inGarden: false,
     sowingOutdoorsRange: [1, 7],
-    harvestingRange: [1, 9]
+    harvestingRange: [1, 9],
+    img: springOnion
   },
   {
     name: 'Tomatos',
     inGarden: false,
     sowingIndoorsRange: [1, 3],
     plantingOutSeedlingsRange: [4, 4],
-    harvestingRange: [6, 8]
+    harvestingRange: [6, 8],
+    img: tomato
   },
 ];

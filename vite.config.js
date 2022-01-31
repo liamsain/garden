@@ -3,5 +3,10 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [vue()],
+  test: {
+    // enable jest-like global test APIs
+    global: true,
+    environment: 'happy-dom'
+  }
 })
