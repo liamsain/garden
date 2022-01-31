@@ -111,8 +111,8 @@ label {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 footer {
-  position: absolute;
-  bottom: 8px;
+  /* position: absolute;
+  bottom: 8px; */
   padding: 24px;
   color: rgb(124, 124, 124);
 }
@@ -126,15 +126,7 @@ h5 {
   /* color: rgb(138, 138, 138);
   text-shadow: 2px 2px 8px #e0e0e0; */
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.7s ease;
-}
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 .bg {
   height: 30%;
   opacity: 0.8;
