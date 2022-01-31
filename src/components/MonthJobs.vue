@@ -107,4 +107,36 @@ const plantingOutSeedlingsForMonth = computed(() =>
 .fade-leave-to {
   opacity: 0;
 }
+.bounce-enter-active {
+  -webkit-animation: bounce-in 0.5s ease-out both;
+          animation: bounce-in 0.5s ease-out both;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 1.5s reverse ease-in both;
+}
+
+@-webkit-keyframes bounce-in {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 </style>

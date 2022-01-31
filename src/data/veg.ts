@@ -1,5 +1,5 @@
 import { IVeg } from '../types/types';
-import carrotImg from '../assets/veg/carrot.png';
+import carrot from '../assets/veg/carrot.png';
 import fennel from '../assets/veg/001-fennel.png';
 import courgette from '../assets/veg/002-zucchini.png';
 import aubergine from '../assets/veg/003-aubergine.png';
@@ -45,8 +45,7 @@ export const veg: IVeg[] = [
     inGarden: false,
     sowingOutdoorsRange: [1, 5],
     harvestingRange: [5, 8],
-    img: runnerBeans
-    // img: carrotImg
+    img: carrot
   },
   {
     name: 'Chicory',
@@ -132,7 +131,7 @@ export const veg: IVeg[] = [
     img: springOnion
   },
   {
-    name: 'Tomatos',
+    name: 'Tomatoes',
     inGarden: false,
     sowingIndoorsRange: [1, 3],
     plantingOutSeedlingsRange: [4, 4],

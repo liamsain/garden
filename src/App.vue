@@ -14,10 +14,8 @@ const currentDate = ref(new Date());
 
 /*
 keep record of stuff in your garden
-generates time to sow, time to harvest
 links to places you can buy seeds
 recommendations based on weather
-
 */
 ;
 </script>
@@ -142,7 +140,7 @@ h5 {
 .content {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
   align-items: center;
   text-align: center;
   height: 100%;

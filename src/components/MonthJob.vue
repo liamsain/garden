@@ -35,6 +35,6 @@ const props = defineProps<{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 6px;
 }
 </style>
