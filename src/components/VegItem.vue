@@ -18,8 +18,7 @@ const jobDescription = computed(() => {
   } else {
     result = props.veg.harvestingAdvice || '';
   }
-  const resultParaSplit = result.split('\n');
-  return resultParaSplit[0].length > 0 ? resultParaSplit : '';
+  return result.split('\n');
 });
 
 </script>
@@ -28,15 +27,15 @@ const jobDescription = computed(() => {
   <div class="veg-item">
     <div
       class="veg-item__heading"
-      :class="jobDescription.length ? 'veg-item__heading--with-description' : ''"
+      :class="jobDescription[0].length ? 'veg-item__heading--with-description' : ''"
       @click="isOpen = !isOpen"
     >
       <img v-if="veg.img" :src="veg.img" />
       <h5 style="padding-left: 12px">{{ veg.name }}</h5>
     </div>
-    <div class="veg-item__info" v-if="isOpen && jobDescription.length">
+    <div class="veg-item__info" v-if="isOpen && jobDescription[0].length">
       <div>
-        <p v-for="(p, i) in jobDescription" :key="i">
+        <p v-for="p in jobDescription">
           <small>{{ p }}</small>
         </p>
       </div>

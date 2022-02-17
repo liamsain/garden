@@ -58,6 +58,14 @@ recommendations based on weather
           >How to grow Leeks</a>
         </small>
       </p>
+      <p>
+        <small>
+          <a
+            target="_blank"
+            href="https://www.thegarlicfarm.co.uk/growing/tips-and-advice"
+          >How to grow garlic</a>
+        </small>
+      </p>
 
     </footer>
   </div>

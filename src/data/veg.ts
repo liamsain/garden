@@ -47,7 +47,21 @@ export const veg: IVeg[] = [
     name: 'Carrots',
     inGarden: false,
     sowingOutdoorsRange: [1, 5],
+    sowingOutdoorsAdvice: `Carrots grow best in full sun and light, fertile, well-drained soil. If your soil is stony, shallow or heavy clay, you may end up with stunted or forked roots, so try short-rooted types.
+
+Before sowing dig over the area to a spades depth, removing weeds, and as many stones as possible. Incorporate plenty of well-rotted manure or compost or / and granular general fertiliser. Ideally allow the to ground to settle and consolidate before sowing.
+
+Early varieties can be sown in February or March under cloches or covered with fleece. The main outdoor sowing season is from April to early July. The seed packet will state whether it’s an early or maincrop variety.
+Sow the seeds as thinly as possible, 1cm (½in) deep, in rows 15–30cm (6–12in) apart. Seeds can be slow to germinate, so be patient. 
+
+Seedlings can be vulnerable to slugs and snails, so put protection in place.
+Thin out the seedlings if necessary, aiming for plants 5–7.5cm (2–3in) apart. Sowing small batches every three to four weeks will give you continuous harvests.`,
     harvestingRange: [5, 8],
+    harvestingAdvice: `Carrots are ready about 12–16 weeks after sowing. So from repeated sowings you can enjoy fresh carrots from late spring to autumn.
+
+Harvest as soon as they’re large enough to use – don’t aim for the largest roots or you’ll sacrifice flavour.
+
+Lift the roots carefully using a fork if your soil is heavy.`,
     img: carrot
   },
   {
@@ -147,8 +161,17 @@ In late winter, give autumn-planted onions a nitrogen-rich fertiliser, such as s
     name: 'Tomatoes',
     inGarden: false,
     sowingIndoorsRange: [1, 3],
+    sowingIndoorsAdvice: `Sow seeds in 7.5cm pots of moist compost, top with a thin layer of vermiculite, then water and cover with cling film. Stand on a warm, bright windowsill or in a propagator.
+
+When your seeds have germinated, remove the cling film (or take them out of the propagator) and keep the compost damp. Transplant seedlings when they reach about 2-3cm tall into 5cm pots filled with moist multi-purpose compost. Return them to the windowsill. Keep potting on as necessary. Support stems by tying them to a pea stick with soft string`,
     plantingOutSeedlingsRange: [4, 4],
+    plantingOutSeedlingsAdvice: `Move your tomatoes outside after the last frost in May. Choose a sunny, sheltered spot, where you can plant them into a border (into soil that has had plenty of well-rotted garden compost added), or into 30cm pots, or put two or three plants in a growing bag. If growing tomatoes in a greenhouse, try growing alongside basil, which thrives in the same conditions.
+    Tall-growing cordon tomatoes will require pinching out (removing side-shoots) and staking (tying plants to canes with soft string). When the first tiny fruits begin to appear, strip away the leaves underneath to allow light and air to reach them better. When there are four trusses (clusters) of flowers, pinch out the plant’s growing tip.
+    Once flowers appear, feed your plants weekly with liquid tomato food, such as Tomorite. Keep tomatoes well watered because irregular watering causes fruit to split or develop hard black patches, known as blossom-end rot. This is caused by a lack of calcium, which is found in water.
+
+With bush tomatoes, which have a sprawling habit, you can pretty much leave them to get on with it. If the fruits are hidden under the leaves, thin out the foliage a little to let the sun through to ripen them. Support heavy trusses on top of upturned flowerpots to prevent their stems snapping.`,
     harvestingRange: [6, 8],
+    harvestingAdvice: 'Leave tomatoes on the plants so they can ripen naturally, which greatly improves the flavour. Towards the end of the season, prune off the older leaves to let in more light and prevent grey mould fungus taking hold. If the weather turns cold, pick the trusses to ripen indoors.',
     img: tomato
   },
 ];
