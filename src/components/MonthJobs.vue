@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, watch, ref } from 'vue';
 import { format } from 'date-fns';
-import { IVeg } from '../types/types';
+import { JobType } from '../types/types';
 import harvesterImg from '../assets/harvester.png';
 import sowIndoorsImg from '../assets/seeding.png';
 import sowOutdoorsImg from '../assets/sow.png';
@@ -11,8 +11,7 @@ import MonthJob from './MonthJob.vue';
 const props = defineProps<{
   monthNumber: number
 }>();
-const show = ref(false);
-setTimeout(() => show.value = true, 50);
+const show = ref(true);
 watch(() => props.monthNumber,() => {
   show.value = false;
   setTimeout(() => show.value = true, 50);
@@ -52,12 +51,13 @@ const plantingOutSeedlingsForMonth = computed(() =>
       <button @click="$emit('prev')">Prev</button>
       <button @click="$emit('next')">Next</button>
     </div>
-    <transition name="fade">
+    <transition name="fade" appear>
       <div class="month-jobs__container" v-if="show">
         <MonthJob
           v-if="sowingIndoorsForMonth.length"
           :img="sowIndoorsImg"
           :vegetables="sowingIndoorsForMonth"
+          :jobType="JobType.SowIndoors"
           title="Sow Indoors"
           class="month-jobs__entry"
         />
@@ -66,6 +66,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
           v-if="sowingOutdoorsForMonth.length"
           :img="sowOutdoorsImg"
           :vegetables="sowingOutdoorsForMonth"
+          :jobType="JobType.SowOutdoors"
           title="Sow Outdoors"
           class="month-jobs__entry"
         />
@@ -74,6 +75,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
           v-if="plantingOutSeedlingsForMonth.length"
           :img="plantOutSeedlingsImg"
           :vegetables="plantingOutSeedlingsForMonth"
+          :jobType="JobType.PlantOutSeedlings"
           title="Plant Seedlings Out"
           class="month-jobs__entry"
         />
@@ -81,6 +83,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
           v-if="harvestForMonth.length"
           :img="harvesterImg"
           :vegetables="harvestForMonth"
+          :jobType="JobType.Harvest"
           title="Harvest"
           class="month-jobs__entry"
         />
@@ -92,6 +95,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 .month-jobs__container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .month-jobs__entry {
@@ -100,7 +104,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.8s ease;
+  transition: opacity 0.6s ease;
 }
 
 .fade-enter-from,

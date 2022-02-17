@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { IVeg } from '../types/types';
+import { IVeg, JobType } from '../types/types';
+import VegItem from './VegItem.vue';
 
 const props = defineProps<{
   img: string,
   vegetables: IVeg[],
-  title: string
+  title: string,
+  jobType: JobType
 }>();
 
 </script>
@@ -12,11 +14,10 @@ const props = defineProps<{
   <div>
     <div class="month-job__title">
       <img :src="img" />
-      <h2>{{ title }}</h2>
+      <h4>{{ title }}</h4>
     </div>
-    <div v-for="veg in vegetables" class="month-job__veg">
-      <img v-if="veg.img" :src="veg.img" />
-      <h4 style="padding-left: 12px">{{ veg.name }}</h4>
+    <div v-for="veg in vegetables">
+      <VegItem :veg="veg" :jobType="jobType" />
     </div>
   </div>
 </template>
@@ -26,15 +27,9 @@ const props = defineProps<{
   align-items: center;
   margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: 6px;
 }
 .month-job__title img {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.month-job__veg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px;
+  margin-right: 6px;
 }
 </style>

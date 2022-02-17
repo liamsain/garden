@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import gardenImg from './assets/garden-veg-basket.jpg';
-import carrot from './assets/carrot.png';
-// https://www.rhs.org.uk/advice/pdfs/vegplanner.pdf
-// https://www.countryliving.com/uk/homes-interiors/gardens/a35804714/vegetable-planting-calendar/
 import { addMonths, format, getMonth } from 'date-fns';
 import SideBar from './components/SideBar.vue';
 import MonthJobs from './components/MonthJobs.vue';
@@ -28,7 +25,6 @@ recommendations based on weather
       @next="currentDate = addMonths(currentDate, 1)"
       @prev="currentDate = addMonths(currentDate, -1)"
     />
-    <!-- <img :src="carrot" style="height: 40px"/> -->
     <footer>
       <p>
         <small>
@@ -54,6 +50,15 @@ recommendations based on weather
           >Country living veg calendar</a>
         </small>
       </p>
+      <p>
+        <small>
+          <a
+            target="_blank"
+            href="https://www.gardenersworld.com/how-to/grow-plants/how-to-grow-leeks/#:~:text=Leeks%20need%20a%20sunny%2C%20sheltered,leeks%20with%20well%2Dblanched%20stems."
+          >How to grow Leeks</a>
+        </small>
+      </p>
+
     </footer>
   </div>
 </template>
@@ -62,7 +67,6 @@ recommendations based on weather
 body,
 html {
   margin: 0;
-  /* background: rgb(23, 172, 23); */
   font-family: "Cabin", sans-serif;
   color: black;
   height: 100%;
@@ -78,7 +82,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   color: rgb(232, 243, 232);
   height: 100%;
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  transition: 0.3s;
+
 }
 p {
   margin: 0;
@@ -121,8 +126,6 @@ h4,
 h5 {
   margin-top: 6px;
   margin-bottom: 6px;
-  /* color: rgb(138, 138, 138);
-  text-shadow: 2px 2px 8px #e0e0e0; */
 }
 
 .bg {
@@ -143,7 +146,7 @@ h5 {
   padding: 20px;
   align-items: center;
   text-align: center;
-  height: 100%;
+  height: 70%;
   position: relative;
   /* background-color: rgba(201, 76, 76, 0.3); */
   /* background-color: rgba(36, 88, 23, 0.3); */
