@@ -44,12 +44,12 @@ const jobDescription = computed(() => {
 </template>
 <style>
 .veg-item {
-  width: 340px;
+  width: 320px;
   margin: 12px;
   margin-bottom: 16px;
--webkit-box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
-box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 2px 58px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 2px 58px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 58px -18px rgba(0, 0, 0, 0.75);
 }
 .veg-item__heading {
   display: flex;
