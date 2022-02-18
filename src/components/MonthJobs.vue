@@ -107,7 +107,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 
 .month-jobs__controls button {
   margin: 0 8px 0 8px;
-  padding: 8px;
+  padding: 6px;
   font-weight:bolder;
 }
 .month-jobs__controls button:hover {

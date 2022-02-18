@@ -13,8 +13,8 @@ const props = defineProps<{
 <template>
   <div>
     <div class="month-job__title">
-      <img :src="img" />
-      <h4>{{ title }}</h4>
+      <img :src="img"/>
+      <h3>{{ title }}</h3>
     </div>
     <div v-for="veg in vegetables">
       <VegItem :veg="veg" :jobType="jobType" />
@@ -31,6 +31,7 @@ const props = defineProps<{
   margin-left: 6px;
 }
 .month-job__title img {
-  margin-right: 6px;
+  margin-right: 12px;
+  height: 46px;
 }
 </style>
