@@ -28,7 +28,7 @@ const props = defineProps<{
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  margin-left: 6px;
+  width: 320px;
 }
 .month-job__title img {
   margin-right: 12px;

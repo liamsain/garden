@@ -8,9 +8,11 @@ import sowOutdoorsImg from '../assets/sow.png';
 import plantOutSeedlingsImg from '../assets/plant-out-seedlings.png';
 import { veg } from '../data/veg';
 import MonthJob from './MonthJob.vue';
+import MonthSpinner from './MonthSpinner.vue';
 const props = defineProps<{
   monthNumber: number
 }>();
+
 const show = ref(true);
 watch(() => props.monthNumber, () => {
   show.value = false;
@@ -46,17 +48,21 @@ const plantingOutSeedlingsForMonth = computed(() =>
 </script>
 <template>
   <div>
-    <h1>{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1>
-    <div class="month-jobs__controls">
+    <MonthSpinner
+      :date="new Date(2000, monthNumber, 1)"
+      @prev="$emit('prev')"
+      @next="$emit('next')"
+    />
+    <!-- <h1>{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1> -->
+    <!-- <div class="month-jobs__controls">
       <div>
         <button @click="$emit('prev')">Previous month</button>
         <button @click="$emit('next')">Next month</button>
       </div>
-    </div>
+    </div> -->
     <transition name="fade" appear>
       <div class="month-jobs__container" v-if="show">
         <MonthJob
-          v-if="sowingIndoorsForMonth.length"
           :img="sowIndoorsImg"
           :vegetables="sowingIndoorsForMonth"
           :jobType="JobType.SowIndoors"
@@ -65,7 +71,6 @@ const plantingOutSeedlingsForMonth = computed(() =>
         />
 
         <MonthJob
-          v-if="sowingOutdoorsForMonth.length"
           :img="sowOutdoorsImg"
           :vegetables="sowingOutdoorsForMonth"
           :jobType="JobType.SowOutdoors"
@@ -74,7 +79,6 @@ const plantingOutSeedlingsForMonth = computed(() =>
         />
 
         <MonthJob
-          v-if="plantingOutSeedlingsForMonth.length"
           :img="plantOutSeedlingsImg"
           :vegetables="plantingOutSeedlingsForMonth"
           :jobType="JobType.PlantOutSeedlings"
@@ -82,7 +86,6 @@ const plantingOutSeedlingsForMonth = computed(() =>
           class="month-jobs__entry"
         />
         <MonthJob
-          v-if="harvestForMonth.length"
           :img="harvesterImg"
           :vegetables="harvestForMonth"
           :jobType="JobType.Harvest"
@@ -108,7 +111,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 .month-jobs__controls button {
   margin: 0 8px 0 8px;
   padding: 6px;
-  font-weight:bolder;
+  font-weight: bolder;
 }
 .month-jobs__controls button:hover {
   cursor: pointer;
