@@ -25,6 +25,7 @@ const props = defineProps<{
 .month-job__title {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 40px;
   margin-bottom: 20px;
   margin-left: 6px;

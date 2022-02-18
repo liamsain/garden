@@ -81,6 +81,10 @@ html {
 
   background-color: rgb(73, 94, 53);
 }
+body {
+    /* -webkit-box-shadow: inset 0 0 2em #000;
+    box-shadow: inset 0 0 2em #000; */
+}
 * {
   box-sizing: border-box;
 }
@@ -137,7 +141,7 @@ h5 {
 }
 
 .bg {
-  height: 30%;
+  height: 20%;
   opacity: 0.8;
 
   /* Center and scale the image nicely */
@@ -154,7 +158,7 @@ h5 {
   padding: 20px;
   align-items: center;
   text-align: center;
-  height: 70%;
+  height: 80%;
   position: relative;
   /* background-color: rgba(201, 76, 76, 0.3); */
   /* background-color: rgba(36, 88, 23, 0.3); */

@@ -12,7 +12,7 @@ const props = defineProps<{
   monthNumber: number
 }>();
 const show = ref(true);
-watch(() => props.monthNumber,() => {
+watch(() => props.monthNumber, () => {
   show.value = false;
   setTimeout(() => show.value = true, 50);
 
@@ -47,9 +47,11 @@ const plantingOutSeedlingsForMonth = computed(() =>
 <template>
   <div>
     <h1>{{ format(new Date(2000, monthNumber, 1), 'LLLL') }}</h1>
-    <div style="display:flex;align-items: center;justify-content:center;">
-      <button @click="$emit('prev')">Prev</button>
-      <button @click="$emit('next')">Next</button>
+    <div class="month-jobs__controls">
+      <div>
+        <button @click="$emit('prev')">Previous month</button>
+        <button @click="$emit('next')">Next month</button>
+      </div>
     </div>
     <transition name="fade" appear>
       <div class="month-jobs__container" v-if="show">
@@ -97,10 +99,22 @@ const plantingOutSeedlingsForMonth = computed(() =>
   flex-wrap: wrap;
   justify-content: center;
 }
+.month-jobs__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.month-jobs__controls button {
+  margin: 0 8px 0 8px;
+  padding: 8px;
+  font-weight:bolder;
+}
+.month-jobs__controls button:hover {
+  cursor: pointer;
+}
 .month-jobs__entry {
-  margin-left: 44px;
-  margin-right: 44px;
+  margin: 0 12px 0 12px;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -113,7 +127,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 }
 .bounce-enter-active {
   -webkit-animation: bounce-in 0.5s ease-out both;
-          animation: bounce-in 0.5s ease-out both;
+  animation: bounce-in 0.5s ease-out both;
 }
 
 .bounce-leave-active {
@@ -122,7 +136,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 
 @-webkit-keyframes bounce-in {
   0% {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(1.1);
@@ -134,7 +148,7 @@ const plantingOutSeedlingsForMonth = computed(() =>
 
 @keyframes bounce-in {
   0% {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(1.1);

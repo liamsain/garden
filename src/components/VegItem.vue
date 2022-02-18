@@ -44,8 +44,12 @@ const jobDescription = computed(() => {
 </template>
 <style>
 .veg-item {
-  width: 180px;
-  margin: 8px;
+  width: 340px;
+  margin: 12px;
+  margin-bottom: 16px;
+-webkit-box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
+box-shadow: 1px 2px 58px -18px rgba(0,0,0,0.75);
 }
 .veg-item__heading {
   display: flex;
@@ -67,11 +71,10 @@ const jobDescription = computed(() => {
   padding: 4px;
   display: flex;
   justify-content: center;
-  background-color: rgb(100, 128, 75);
+  /* background-color: rgb(100, 128, 75); */
   border-radius: 0 0 3px 3px;
 }
 .veg-item__info p {
-  max-width: 150px;
   padding-bottom: 8px;
 }
 </style>

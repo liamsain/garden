@@ -137,7 +137,7 @@ In late winter, give autumn-planted onions a nitrogen-rich fertiliser, such as s
     img: parsnip
   },
   {
-    name: 'Potatos',
+    name: 'Potatoes',
     inGarden: false,
     sowingOutdoorsRange: [2, 4],
     harvestingRange: [5, 8],
