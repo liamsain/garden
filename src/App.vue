@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import gardenImg from './assets/garden-veg-basket.jpg';
-import { addMonths, format, getMonth } from 'date-fns';
-import SideBar from './components/SideBar.vue';
+import { addMonths, getMonth } from 'date-fns';
 import MonthJobs from './components/MonthJobs.vue';
 
 const currentDate = ref(new Date());

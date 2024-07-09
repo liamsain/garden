@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, watch, ref } from 'vue';
-import { format } from 'date-fns';
 import { JobType } from '../types/types';
 import harvesterImg from '../assets/harvester.png';
 import sowIndoorsImg from '../assets/seeding.png';
