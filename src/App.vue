@@ -148,9 +148,7 @@ h5 {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: inset 1px -12px 5px 0px #495e35;
-  /* filter: blur(2px);
-  background-color: black;
-  box-shadow: 3px 3px red, -1em 0 .4em olive; */
+  filter: blur(4px);
 }
 .content {
   display: flex;
